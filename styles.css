@@ -1,0 +1,319 @@
+/* Bridgetown Media Group — shared styles
+   Palette: ink black, paper white, oxblood red.
+   Display: Oswald (condensed, poster). Body: Libre Franklin. */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Libre+Franklin:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --ink: #141210;
+  --paper: #f4f1ea;
+  --red: #b31217;
+  --line: #141210;
+  --muted: #5a534c;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Libre Franklin', system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--red); }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-bottom: 3px solid var(--red);
+}
+.nav a { color: var(--paper); text-decoration: none; }
+.brand {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.82rem;
+}
+.nav-links a:hover { color: var(--red); }
+
+/* native dropdown, no JS */
+.menu { position: relative; }
+.menu > summary {
+  list-style: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.menu > summary::-webkit-details-marker { display: none; }
+.menu[open] > summary { color: var(--red); }
+.menu-panel {
+  position: absolute;
+  right: 0;
+  margin-top: 0.7rem;
+  background: var(--ink);
+  border: 1px solid var(--red);
+  min-width: 190px;
+  padding: 0.4rem 0;
+}
+.menu-panel a {
+  display: block;
+  padding: 0.55rem 1rem;
+  font-size: 0.82rem;
+}
+.menu-panel a:hover { background: var(--red); }
+
+/* ---------- Layout ---------- */
+.wrap { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+section { padding: 4.5rem 0; border-bottom: 1px solid rgba(20,18,16,0.12); }
+section:last-of-type { border-bottom: none; }
+
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 1rem;
+}
+h1 { font-size: clamp(2.6rem, 7vw, 5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h3 { font-size: 1.15rem; letter-spacing: 0.05em; }
+
+.eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--red);
+  margin: 0 0 0.6rem;
+}
+
+.lede { font-size: 1.25rem; }
+
+.arrow { width: 120px; margin: 2.5rem auto 0; opacity: 0.85; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  background: var(--red);
+  color: var(--paper);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--red);
+}
+.btn:hover { background: transparent; color: var(--red); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn.ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- Home ---------- */
+.hero-home {
+  min-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--paper);
+  background:
+    linear-gradient(180deg, rgba(20,18,16,0.15) 0%, rgba(20,18,16,0.82) 100%),
+    url('images/Fuck_Ted_ICE2.png') center/cover no-repeat;
+  padding: 2.5rem 1.5rem 3rem;
+  border-bottom: 3px solid var(--red);
+}
+.hero-home .wordmark {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(2.4rem, 8vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+.hero-home .tagline {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: clamp(0.85rem, 2.2vw, 1.1rem);
+  margin: 0.6rem 0 0;
+  color: var(--paper);
+}
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1.8rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+}
+.home-links a { color: var(--paper); text-decoration: none; border-bottom: 2px solid var(--red); padding-bottom: 2px; }
+.home-links a:hover { color: var(--red); }
+
+/* Memoir hero (photo behind headline) */
+.hero-banner {
+  color: var(--paper);
+  background:
+    linear-gradient(180deg, rgba(20,18,16,0.35) 0%, rgba(20,18,16,0.85) 100%),
+    url('images/IMG_1420.jpg') center/cover no-repeat;
+  border-bottom: 3px solid var(--red);
+}
+.hero-banner h1,
+.hero-banner h2,
+.hero-banner .lede { color: var(--paper); }
+
+/* Punching Nazis — flowing article, images and quote floated */
+.excerpt-flow::after { content: ""; display: block; clear: both; }
+
+.excerpt-flow .float-right {
+  float: right;
+  max-width: 300px;
+  margin: 0.4rem 0 1.4rem 2rem;
+}
+.excerpt-flow .float-left {
+  float: left;
+  max-width: 300px;
+  margin: 0.4rem 2rem 1.4rem 0;
+}
+.excerpt-flow figure {
+  margin: 0 0 0.5rem;
+}
+.excerpt-flow figure img {
+  border: 1px solid var(--ink);
+  box-shadow: 4px 4px 0 rgba(20, 18, 16, 0.18);
+}
+
+@media (max-width: 680px) {
+  .excerpt-flow .float-right,
+  .excerpt-flow .float-left {
+    float: none;
+    max-width: 100%;
+    margin: 1.5rem 0;
+  }
+}
+/* Christmas book — cover beside the title */
+.xmas-hero-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.xmas-cover { margin: 0; }
+.xmas-cover img {
+  width: 100%;
+  border: 1px solid var(--ink);
+  box-shadow: 4px 4px 0 rgba(20, 18, 16, 0.18);
+}
+.xmas-intro h1 { margin-top: 0.4rem; }
+
+@media (max-width: 680px) {
+  .xmas-hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+.xmas-inside img {
+  max-width: 460px;
+  width: 100%;
+  border: 1px solid var(--ink);
+  box-shadow: 4px 4px 0 rgba(20, 18, 16, 0.18);
+}
+/* ---------- Content bits ---------- */
+figure {
+  margin: 1rem 0;
+}
+figure img {
+  border: 1px solid var(--ink);
+  box-shadow: 4px 4px 0 rgba(20, 18, 16, 0.18);
+}
+figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
+
+.portrait {
+  display: block;
+  max-width: 340px;
+  width: 100%;
+  margin: 0 0 2rem;
+  border: 1px solid var(--ink);
+  box-shadow: 4px 4px 0 rgba(20, 18, 16, 0.18);
+}
+
+.pull {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  line-height: 1.1;
+  border-left: 5px solid var(--red);
+  padding-left: 1.2rem;
+  margin: 2.5rem 0;
+}
+
+.review { border-top: 1px solid rgba(20,18,16,0.2); padding-top: 1.2rem; margin-top: 1.2rem; }
+.stars { color: var(--red); font-weight: 600; }
+
+.band { background: var(--ink); color: var(--paper); }
+.band .eyebrow { color: var(--red); }
+.band a { color: var(--paper); }
+
+.price { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1.4rem; }
+
+.stack { display: flex; flex-direction: column; gap: 0.8rem; align-items: flex-start; }
+
+/* ---------- Footer ---------- */
+.foot {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-top: 3px solid var(--red);
+}
+.foot .social { display: flex; gap: 1.2rem; justify-content: center; margin-bottom: 1.2rem; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.82rem; }
+.foot .social a { color: var(--paper); text-decoration: none; }
+.foot .social a:hover { color: var(--red); }
+.foot .fine { font-size: 0.78rem; color: #b9b2a9; line-height: 1.5; }
+.foot .fine a { color: #b9b2a9; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 680px) {
+  .nav { flex-wrap: wrap; gap: 0.6rem 1rem; padding: 0.7rem 1rem; }
+  .nav-links { gap: 1rem; font-size: 0.74rem; flex-wrap: wrap; }
+  body { font-size: 17px; }
+  section { padding: 3rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
