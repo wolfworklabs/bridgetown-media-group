@@ -421,6 +421,16 @@ figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; font-s
   margin-top: 1rem;
 }
 
+@media (max-width: 900px) {
+  .index_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .entry {
+    max-width: none;
+  }
+}
+
 
 /* ---------- Footer ---------- */
 .foot {
