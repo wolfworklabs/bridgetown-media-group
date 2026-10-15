@@ -358,10 +358,13 @@ figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; font-s
 
 .rant_title {
   font-family: 'Oswald', sans-serif;
+  text-align: left;
   font-weight: 400;
   letter-spacing: 0.02em;
-  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   margin: 0 0 0.5rem;
+  padding-bottom: 1rem;
+  line-height: 3.2rem;
 }
 
 .rant_date {
