@@ -424,6 +424,55 @@ figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; font-s
   margin-top: 1rem;
 }
 
+/* ---------- Gentler pages ---------- */
+.gentle .wordmark {
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  letter-spacing: 0.03em;
+}
+
+.gentle .entry {
+  outline: 1px solid rgba(20, 18, 16, 0.25);
+}
+
+.gentle .rant_title {
+  font-weight: 400;
+  text-transform: none;
+}
+
+.gentle .entry_content p {
+  line-height: 1.75;
+}
+
+.gentle .read-more {
+  color: var(--ink);
+  border-color: rgba(20, 18, 16, 0.4);
+}
+
+.j_wordmark {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 16px 1rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 6.4vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+
+.j_tagline {
+  max-width: 1200px;
+  margin: 0.6rem auto 0;
+  padding: 0 16px;
+  font-family: 'franklin-gothic', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: clamp(0.85rem, 2.2vw, 1.1rem);
+  color: var(--ink);
+}
+
 @media (max-width: 900px) {
   .index_grid {
     grid-template-columns: 1fr;
